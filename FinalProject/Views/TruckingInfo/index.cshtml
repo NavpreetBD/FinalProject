@@ -1,0 +1,24 @@
+﻿@model IEnumerable<TruckingInfo>
+
+<h2>TruckingInfo</h2>
+<table class="table">
+    <tr>
+        <th>TruckID</th>
+        <th>DriverID</th>
+        <th>DriverName</th>
+        <th>Mileage</th>
+        
+    </tr>
+
+    @foreach (var truckingInfo in @Model)
+    {
+        <tr>
+            <td><a href="/Product/ViewProduct/@truckingInfo.TruckID">@truckingInfo.TruckID</a></td>
+            <td>@truckingInfo.DriverID</td>
+            <td>@truckingInfo.DriverName</td>
+            <td>@truckingInfo.Mileage</td>
+           
+        </tr>
+    }
+
+</table>
