@@ -3,6 +3,50 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4"><strong>Dhillon Logistics</strong> </h1>
+    <p> </p>
 </div>
+
+@* <style>
+   body
+   {
+       background-image: url('/images/truckimage4.jpg');
+       background-size: cover;
+       color : white;
+   }
+</style> *@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Hide any overflow */
+        background: #000; /* Fallback background color */
+    }
+
+    video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1; /* Place the video behind other content */
+        background-size: cover; /* Cover the entire viewport */
+    }
+
+    /* Additional styles for content */
+    .content {
+        position: relative;
+        z-index: 1; /* Ensure the content appears above the video */
+        color: #fff;
+        text-align: center;
+        padding: 50px;
+    }
+</style>
+
+<body>
+    <video autoplay muted loop>
+        <source src="images/Truckvideo1.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    
+</body>

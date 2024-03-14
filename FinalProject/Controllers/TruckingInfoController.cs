@@ -29,5 +29,39 @@ namespace FinalProject.Controllers
             return View(truckinginfo);
         }
 
+        public IActionResult UpdateTruckingInfo(int id)
+        {
+            TruckingInfo prod = repo.GetInfo(id);    // can use info instead of prod
+            if (prod == null)
+            {
+                return View("TruckingInfoNotFound");
+            }
+            return View(prod);
+        }
+
+        public IActionResult UpdateTruckingInfoToDatabase(TruckingInfo info)
+        {
+            repo.UpdateTruckingInfo(info);
+
+            return RedirectToAction("ViewTruckingInfo", new { id = info.TruckID });
+        }
+
+        public IActionResult InsertTruckingInfo()
+        {
+            var prod = repo.AssignCategory();
+            return View(prod);
+        }
+
+        public IActionResult InsertTruckingInfoToDatabase(TruckingInfo infoToInsert)
+        {
+            repo.InsertTruckingInfo(infoToInsert);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult DeleteTruckingInfo(TruckingInfo info)
+        {
+            repo.DeleteTruckingInfo(info);
+            return RedirectToAction("Index");
+        }
     }
 }

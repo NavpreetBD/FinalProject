@@ -1,0 +1,26 @@
+﻿@model TruckingInfo
+
+<h2>Update @Model.TruckID</h2>
+
+@using (Html.BeginForm("UpdateTruckingInfoToDatabase", "TruckingInfo", "Post"))
+{
+    <input asp-for="TruckID" type="hidden" value="@Model.TruckID" />
+
+    <input asp-for="DriverID" type="hidden" value="@Model.DriverID" />
+
+    <label asp-for="DriverName" class="control-label">DriverName</label>
+    
+    <input type="text" name="DriverName" class="form-control" value="@Model.DriverName" />
+
+    <label asp-for="Mileage" class="control-label">Mileage</label>
+    <input type="number" step="0.01" name="Mileage" class="form-control" value="@Model.Mileage" />
+
+    <input type="submit" value="Update TruckingInfo" class="btn btn-primary" />
+
+}
+<style>
+    body
+    {
+        background-color : grey;
+    }
+</style>

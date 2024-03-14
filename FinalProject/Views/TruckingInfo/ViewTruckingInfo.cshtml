@@ -18,3 +18,21 @@
        
     </tr>
 </table>
+
+<div style="display: block">
+    <a href="/TruckingInfo/UpdateTruckingInfo/@Model.TruckID" style="color:white">Update this TruckingInfo</a>
+</div>
+
+<div style="display: block">
+
+    @using (Html.BeginForm("DeleteTruckingInfo", "TruckingInfo", "Post"))
+    {
+        <input type="hidden" asp-for="TruckID" value="@Model.TruckID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this info" />
+    }
+</div>
+<style>
+    body {
+        background-color : grey;
+    }
+</style>

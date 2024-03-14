@@ -1,7 +1,12 @@
 ﻿@model IEnumerable<TruckingInfo>
 
 <h2>TruckingInfo</h2>
-<table class="table">
+
+<div style="display: block">
+    <a href="/TruckingInfo/InsertTruckingInfo/" style="color: white">Create a New Info</a>
+</div>
+
+<table class="table" style="color:white">
     <tr>
         <th>TruckID</th>
         <th>DriverID</th>
@@ -13,7 +18,7 @@
     @foreach (var truckingInfo in @Model)
     {
         <tr>
-            <td><a href="/Product/ViewProduct/@truckingInfo.TruckID">@truckingInfo.TruckID</a></td>
+            <td><a href="/TruckingInfo/ViewTruckingInfo/@truckingInfo.TruckID" style="color:white">@truckingInfo.TruckID</a></td>
             <td>@truckingInfo.DriverID</td>
             <td>@truckingInfo.DriverName</td>
             <td>@truckingInfo.Mileage</td>
@@ -22,3 +27,11 @@
     }
 
 </table>
+<style>
+    body {
+        background-image: url('/images/truckimage5.jpg');
+        background-size: cover;
+        color: white;
+    }
+  
+</style>

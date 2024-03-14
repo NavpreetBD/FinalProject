@@ -6,6 +6,11 @@ namespace FinalProject.Models
     {
         public IEnumerable<TruckingInfo> GetAllInfo();
         public  TruckingInfo GetInfo(int id);
+        void UpdateTruckingInfo(TruckingInfo info);
+        public void InsertTruckingInfo(TruckingInfo infoToInsert);
+        public IEnumerable<Category> GetCategories();
+        public TruckingInfo AssignCategory();
+        public void DeleteTruckingInfo(TruckingInfo info);
 
     }
 }
